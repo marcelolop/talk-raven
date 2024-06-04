@@ -2,32 +2,169 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/* ======== stream css overrides ======== */
+.str-video__call-stats {
+  max-width: 500px;
+  position: relative;
+}
+
+.str-video__speaker-layout__wrapper {
+  max-height: 700px;
+}
+
+.str-video__participant-details {
+  color: #fff;
+}
+
+.str-video__menu-container {
+  color: #fff;
+}
+
+.str-video__notification {
+  color: #fff;
+}
+
+.str-video__participant-list {
+  background-color: #1c1f2e;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  height: 100%;
+}
+
+.str-video__call-controls__button {
+  height: 40px;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.glassmorphism2 {
+  background: rgba(18, 17, 17, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ==== clerk class override ===== */
+.cl-providerIcon__github {
+  filter: invert(1);
+}
+
+.override-rules .cl-formButtonPrimary[data-variant="solid"][data-color="primary"] {
+  box-shadow: none;
+  background-color: #830ef9;
+
+  &:hover {
+    color: #fff;
+    background-color: #830ef9;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.cl-button__manageAccount,
+.cl-button__signOut {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+    background-color: #830ef9;
+  }
 }
 
+.cl-badge {
+  color: #fff;
+  background-color: #830ef9;
+}
+
+.cl-button {
+  color: #fff;
+  border: 1px solid #565761;
+
+  &:hover {
+    color: #fff;
+    background-color: #830ef9;
+  }
+}
+
+.cl-profileSectionPrimaryButton__danger {
+  color: #fff;
+  border: 1px solid #ff0000;
+
+  &:hover {
+    color: #fff;
+    background-color: #ff0000;
+  }
+}
+
+.cl-button__account,
+.cl-button__security {
+  color: #fff;
+  margin-top: 5px;
+  &:hover {
+    color: #fff;
+    background-color: #830ef9;
+  }
+}
+
+.cl-userButtonPopoverActionButtonIcon {
+  color: #fff;
+}
+
+.cl-logoBox {
+  height: 40px;
+}
+.cl-dividerLine {
+  background: #252a41;
+  height: 2px;
+}
+
+.cl-socialButtonsIconButton {
+  border: 3px solid #565761;
+}
+
+.cl-internal-wkkub3 {
+  color: #fff;
+}
+.cl-userButtonPopoverActionButton {
+  color: #fff;
+}
+
+/* =============================== */
+
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+/* animation */
+
+.show-block {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  animation: show 0.7s forwards linear;
+}
+
+@keyframes show {
+  0% {
+    animation-timing-function: ease-in;
+    width: 0%;
+  }
+
+  100% {
+    animation-timing-function: ease-in;
+    width: 100%;
   }
 }
