@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { SignedIn, UserButton } from '@clerk/nextjs';
+import Image from "next/image";
+import Link from "next/link";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
-import MobileNav from './MobileNav';
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
@@ -12,18 +12,18 @@ const Navbar = () => {
           src="/icons/logo.svg"
           width={32}
           height={32}
-          alt="yoom logo"
+          alt="TalkRaven logo"
           className="max-sm:size-10"
         />
         <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-          <strong className="text-white">Talk</strong><strong className="text-purple-1">Raven</strong>
+          <strong className="text-white">Talk</strong>
+          <strong className="text-purple-1">Raven</strong>
         </p>
       </Link>
       <div className="flex-between gap-5">
         <SignedIn>
           <UserButton afterSignOutUrl="/sign-in" />
         </SignedIn>
-
         <MobileNav />
       </div>
     </nav>
